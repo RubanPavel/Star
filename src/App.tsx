@@ -1,39 +1,39 @@
 import React from 'react';
 import './App.css';
 import Accordion from "./Component/Accordion/Accodion";
+import {RatingStar} from "./Component/Rating/Rating";
 
 function App() {
+
     return (
         <div>
-            <Hello/>
-            <RetingStar/>
-            <Accordion/>
+            <Hello title={'Hello'}/>
+            <Hello title={'Hello, this is new app component'}/>
+            <Accordion titleValue = {'Mеню'} collapsed = {true}/>
+            <Accordion titleValue = {'Цена'} collapsed = {false}/>
+            <RatingStar value={1}/>
+            <RatingStar value={2}/>
+            <RatingStar value={3}/>
+            <RatingStar value={4}/>
+            <RatingStar value={5}/>
+
+
         </div>
     );
 
 }
 
-function RetingStar() {
-    return (
-        <div><ComponentOneStar/>
-            <ComponentOneStar/>
-            <ComponentOneStar/>
-            <ComponentOneStar/>
-            <ComponentOneStar/>
-        </div>
-    );
+type TitleHelloPropsType = {
+    title: string
 }
 
 
-function ComponentOneStar() {
-    return (
-        <div>STAR</div>
-    );
+class TitleHelloProps {
 }
 
-function Hello() {
+function Hello(props:TitleHelloPropsType) {
     return (
-        <>Hello, this is new app component</>
+        <div>{props.title}</div>
     );
 }
 
