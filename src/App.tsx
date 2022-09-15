@@ -1,41 +1,24 @@
 import React from 'react';
 import './App.css';
-import Accordion from "./Component/Accordion/Accodion";
-import {RatingStar} from "./Component/Rating/Rating";
+
+import {CarsComponent} from "./Component/Map/UsedMapFile";
 
 function App() {
 
+    const topCars = [
+        {id:1, manufacturer:'BMW', model:'m5cs'},
+        {id:2, manufacturer:'Mercedes', model:'e63s'},
+        {id:3, manufacturer:'Audi', model:'rs6'}
+    ]
+
     return (
-        <div>
-            <Hello title={'Hello'}/>
-            <Hello title={'Hello, this is new app component'}/>
-            <Accordion titleValue = {'Mеню'} collapsed = {true}/>
-            <Accordion titleValue = {'Цена'} collapsed = {false}/>
-            <RatingStar value={1}/>
-            <RatingStar value={2}/>
-            <RatingStar value={3}/>
-            <RatingStar value={4}/>
-            <RatingStar value={5}/>
-
-
-        </div>
-    );
+        <>
+        <CarsComponent CarsArray={topCars} />
+        </>
+    )
 
 }
 
-type TitleHelloPropsType = {
-    title: string
-}
-
-
-class TitleHelloProps {
-}
-
-function Hello(props:TitleHelloPropsType) {
-    return (
-        <div>{props.title}</div>
-    );
-}
 
 
 export default App;
